@@ -1,0 +1,264 @@
+/*
+Project name: Mars Rover Kata
+Developer: Mateus Cavalcanti Felix Oliveira
+Contact: mateus.cfoliveira@gmail.com
+github.com/thebinaryfelix
+Company: Ironhack - Madrid
+Date: Feb, 27 - 2018
+Version: 1.01
+*/
+
+@import url("https://fonts.googleapis.com/css?family=Orbitron|Titillium+Web:600");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 62.5%/1.5;
+  margin: 0;
+  padding: 0;
+  color: #000000;
+  background-color: #ffffff;
+  font-family: "Titillium web", sans-serif;
+}
+
+h1 {
+  font-size: 3em;
+  margin: 0;
+  color: rgb(247, 0, 0);
+  font-family: "Orbitron", sans-serif;
+}
+
+h2 {
+  font-size: 1.8em;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: #b8b8b8;
+}
+
+.control-container {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 30px 0 5px 0;
+  text-align: center;
+  color: #b8b8b8;
+  background-color: #232423;
+  overflow: hidden;
+}
+
+.header-text {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+.logConsole {
+  width: 50%;
+  height: 40px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  padding: 10px 0 0 0;
+  color: #c5c2c2;
+  font-size: 1.3em;
+  text-align: center;
+  background-color: #111111;
+  border-radius: 5px;
+  box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.kata {
+  width: 100%;
+  overflow: hidden;
+}
+
+.world {
+  width: 80%;
+  float: left;
+  padding: 0;
+  margin-top: 30px;
+}
+
+.btn-log {
+  width: 90%;
+  margin: auto;
+  margin-top:30px;
+}
+
+.btn-log p {
+  float: left;
+  margin: 5px 0;
+}
+
+table {
+  float: right;
+  color: #e5f500;
+  font-weight: bold;
+  background-color: #191a19;
+  background-image: url("img/mars_terrain.jpg");
+  background-size: 1300px auto;
+  border: 2px solid #afafaf;
+  border-radius: 8px;
+}
+
+table td {
+  width: 80px;
+  height: 60px;
+  font-size: 0.9em;
+  background-color: rgba(0, 0, 0, 0.4);
+  text-align: center;
+  word-wrap: break-word;
+  border-radius: 5px;
+}
+
+.commands {
+  width: 180px;
+  height: auto;
+  padding: 8px 0 8px 0;
+  position: fixed;
+  right: 2%;
+  bottom: 2%;
+  margin-bottom: 30px;
+  background-color: #1f1f1f;
+  border: 2px solid #585858;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.roverSelection:focus,
+.btn-rover button:focus,
+.reset-btn button:focus,
+.btn-log button:focus,
+.input-command input {
+  outline: none;
+}
+
+.btn-rover {
+  width: 150px;
+  height: 72px;
+  margin: auto;
+  padding: 0;
+  text-align: center;
+  overflow: hidden;
+}
+
+.btn-rover button,
+.reset-btn button,
+.btn-log button {
+  width: 40px;
+  margin-top: 2px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  background-color: #191a19;
+  color: #ffffff;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+.btn-rover button:hover,
+.reset-btn button:hover,
+.btn-log button:hover {
+  background-color: #272727;
+}
+
+.btn-rover button:active,
+.reset-btn button:active,
+.btn-log button:active {
+  box-shadow: inset 0 1px 3px #000000;
+}
+
+.roverSelection {
+  float: left;
+  width: 100%;
+  height: auto;
+  margin: 20px 0;
+  padding: 12px;
+  color: #cacaca;
+  font-size: 1em;
+  font-weight: bold;
+  border: none;
+  background-color: #191a19;
+  border-radius: 5px 5px 0 0;
+  box-shadow: inset 0 1px 3px #000000;
+}
+
+.roverSelection:hover,
+option:hover {
+  background-color: #161716;
+}
+
+.reset-btn {
+  width: auto;
+  clear: both;
+  text-align: center;
+}
+
+.reset-btn button {
+  margin: 0;
+}
+
+.input-command {
+  width: auto;
+  height: 90px;
+  margin: 20px auto;
+  padding: 8px 0 8px 0;
+  color: #c5c2c2;
+  font-size: 1em;
+  text-align: center;
+  border-radius: 8px;
+  background-color: #111111;
+}
+
+.input-command input {
+  height: 1.5em;
+  margin-bottom: 13px;
+  background-color: #363636;
+  border: none;
+  color: #ffffff;
+}
+
+.input-command a,
+.input-command a:visited {
+  padding: 5px;
+  border: 1px solid #2e2e2e;
+  border-radius: 5px;
+  background-color: #55001c;
+  color: #e0e0e0;
+  text-decoration: none;
+}
+
+.input-command a:hover {
+  background-color: #470018;
+  color: #cac7c7;
+}
+
+.reset-btn button {
+  width: 60px;
+  margin-top: 2px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  background-color: #191a19;
+  color: #ffffff;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+.footer {
+  width: auto;
+  height: 100px;
+  margin: 50px 0 0 0;
+  padding: 0;
+  background-color: #acacac;
+}
+
+.footer-text {
+  padding-top: 10px;
+  text-align: center;
+  font-size: 1em;
+  color: #706f6f;
+}
+
+.footer-text img {
+  width: 30px;
+  margin-top: 10px;
+}
