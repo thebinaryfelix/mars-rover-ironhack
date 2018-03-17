@@ -46,9 +46,29 @@ var planetMars = [
   [null, null, null, null, null, null, "Crater", null, null, "Alien Base"]
 ];
 
+/*
+Creating a matrix with randomly positioned obstacles:
+
+1. Create X objects named: obs1, obs2, ... , obsX. X is the total number of different obstacles you want;
+2. Assign a name for each obstacle, example: var obs1 = {name: "Frozen Water"} and Also do this for a null object!
+3. Assign a number for each obstacle: var obs1 = {name: "Frozen Water", indexNum: 001};
+4. Reset planetMars to a null matrix;
+5. Create a function called fillPlanetObstacles()
+
+Function fillPlanetObstacles(){
+  1. Create a For loop to run through the matrix index numbers;
+  2. Inside the For loop:
+    3. Generate a random number between 0 and X;
+    4. Round the number;
+    5. In the current index, get the number generated and write in the matrix the obstacle correspondent to its index number;
+    6. Optional but more adequate: include a function to fill null spaces more often than filling with obstacles (create a probability function);
+}
+
+6. end
+*/
+
 function moveForward() {
   document.getElementById("logConsole").innerHTML = "moveForward was called!";
-  console.log("moveForward was called");
 
   var myRobot = document.getElementById("rovers").value;
   myRobot = eval(myRobot);
@@ -141,7 +161,6 @@ function moveForward() {
 
 function moveBackwards() {
   document.getElementById("logConsole").innerHTML = "moveBackwards was called!";
-  console.log("moveBackwards was called");
 
   var myRobot = document.getElementById("rovers").value;
   myRobot = eval(myRobot);
@@ -260,7 +279,6 @@ function turnLeft() {
 
 function turnRight() {
   document.getElementById("logConsole").innerHTML = "turnRight was called!";
-  console.log("turnRight was called!");
 
   var myRobot = document.getElementById("rovers").value;
   myRobot = eval(myRobot);
@@ -305,7 +323,6 @@ function receiveCommand() {
     } else {
       document.getElementById("logConsole").innerHTML =
         "Movement interrupted due to invalid command input.";
-      console.log("Movement interrupted due to invalid command input.");
       break;
     }
   }
@@ -345,10 +362,8 @@ function checkObstacle(planetTerrain, roverPosLine, roverPosCol) {
     }
   } else if (roverPosCol != null && roverPosLine == null) {
     if (planetTerrain[myRobot.posLine][roverPosCol] == null) {
-      //console.log(planetTerrain[myRobot.posLine][roverPosCol]);
       return null;
     } else {
-      //console.log(planetTerrain[myRobot.posLine][roverPosCol]);
       return planetTerrain[myRobot.posLine][roverPosCol];
     }
   }
@@ -371,9 +386,6 @@ function showTravelLog() {
       travelCol = myRobot.travelLog[row+1];
       row++;
       
-      //console.log("travelRow: " + travelRow);
-      //console.log("travelCol: " + travelCol);
-      
       table.rows[travelRow].cells[travelCol].innerHTML = myRobot.nickname;
   }
 }
@@ -391,8 +403,6 @@ function createWorld(planetTerrain) {
         td.appendChild(tn);
       } else {
         tn = null;
-
-        // td.appendChild(tn);
       }
       tr.appendChild(td);
     }
@@ -411,15 +421,3 @@ function editWorld() {
     }
   }
 }
-
-/* Used only with console
-function showCurrentPosition() {
-  var myRobot = document.getElementById("rovers").value;
-  myRobot = eval(myRobot);
-
-  console.log("Direction: " + myRobot.direction);
-  console.log(
-    "X:[" + myRobot.posLine + "]" + " " + "Y:[" + myRobot.posCol + "]"
-  );
-}
-*/
